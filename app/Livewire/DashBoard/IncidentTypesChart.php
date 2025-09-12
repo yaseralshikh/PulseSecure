@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\DashBoard;
+namespace App\Livewire\Dashboard;
 
 use App\Models\Incident;
 use Livewire\Component;
@@ -35,6 +35,6 @@ class IncidentTypesChart extends Component
 
     public function render()
     {
-        return view('livewire.dash-board.incident-types-chart');
+        return view('livewire.dashboard.incident-types-chart');
     }
 }

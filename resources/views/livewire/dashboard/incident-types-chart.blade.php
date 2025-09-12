@@ -1,5 +1,5 @@
 <div>
-    <div class="bg-white rounded-2xl shadow p-4">
+    <div class="rounded-2xl">
         <h2 class="text-lg font-semibold mb-2">نسبة أنواع الوقائع</h2>
         <div id="incident-types-chart" style="height: 300px;"></div>
 

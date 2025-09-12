@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Livewire\DashBoard;
+namespace App\Livewire\Dashboard;
 
 use Livewire\Component;
 use App\Models\Incident;
-use Illuminate\Support\Carbon;
 
 class IncidentTrendChart extends Component
 {
@@ -32,20 +31,6 @@ class IncidentTrendChart extends Component
                 'data' => $incidents->pluck('count')->toArray(),
             ]]
         ];
-
-        // Group by month and year
-        // $incidents = Incident::selectRaw("DATE_FORMAT(date, '%Y-%m') as month, COUNT(*) as count")
-        //     ->groupBy('month')
-        //     ->orderBy('month')
-        //     ->get();
-
-        // return [
-        //     'labels' => $incidents->pluck('month')->toArray(),
-        //     'series' => [[
-        //         'name' => 'عدد الوقوعات',
-        //         'data' => $incidents->pluck('count')->toArray(),
-        //     ]]
-        // ];        
     }
 
     public function getIncidentTypesChart()
@@ -69,6 +54,6 @@ class IncidentTrendChart extends Component
 
     public function render()
     {
-        return view('livewire.dash-board.incident-trend-chart');
+        return view('livewire.dashboard.incident-trend-chart');
     }
 }

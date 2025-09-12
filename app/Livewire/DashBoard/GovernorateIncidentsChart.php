@@ -4,7 +4,6 @@ namespace App\Livewire\Dashboard;
 
 use Livewire\Component;
 use App\Models\Incident;
-use App\Models\Governorate;
 
 class GovernorateIncidentsChart extends Component
 {
@@ -38,20 +37,6 @@ class GovernorateIncidentsChart extends Component
             ]
         ];
     }    
-
-    // public function getChartData()
-    // {
-    //     $data = Incident::selectRaw('governorate_id, COUNT(*) as count')
-    //         ->groupBy('governorate_id')
-    //         ->pluck('count', 'governorate_id');
-
-    //     $governorates = Governorate::whereIn('id', $data->keys())->pluck('name', 'id');
-
-    //     return [
-    //         'labels' => $governorates->values()->toArray(),
-    //         'series' => $data->values()->toArray(),
-    //     ];
-    // }   
 
     public function render()
     {
