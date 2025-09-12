@@ -19,6 +19,7 @@ class IncidentTrendChart extends Component
 
     public function getChartData()
     {
+        // Group by date
         $incidents = Incident::selectRaw('DATE(date) as date, COUNT(*) as count')
             ->groupBy('date')
             ->orderBy('date')
@@ -31,6 +32,20 @@ class IncidentTrendChart extends Component
                 'data' => $incidents->pluck('count')->toArray(),
             ]]
         ];
+
+        // Group by month and year
+        // $incidents = Incident::selectRaw("DATE_FORMAT(date, '%Y-%m') as month, COUNT(*) as count")
+        //     ->groupBy('month')
+        //     ->orderBy('month')
+        //     ->get();
+
+        // return [
+        //     'labels' => $incidents->pluck('month')->toArray(),
+        //     'series' => [[
+        //         'name' => 'عدد الوقوعات',
+        //         'data' => $incidents->pluck('count')->toArray(),
+        //     ]]
+        // ];        
     }
 
     public function getIncidentTypesChart()
