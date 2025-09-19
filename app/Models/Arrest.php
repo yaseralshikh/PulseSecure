@@ -15,5 +15,4 @@ class Arrest extends Model
     {
         return $this->belongsTo(Incident::class);
     }
-
 }
